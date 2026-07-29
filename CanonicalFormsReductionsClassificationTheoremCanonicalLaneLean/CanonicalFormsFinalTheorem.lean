@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CanonicalFormsReductionsClassificationTheoremCanonicalLaneLean.CanonicalReductionsEvidence
+import HautevilleHouse.CanonicalFormsReductionsClassificationTheoremCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.CanonicalFormsReductionsClassificationTheoremCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace CanonicalFormsReductionsClassificationTheoremCanonicalLaneLean
+
+def ConstrainedCanonicalFormsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_canonical_forms_endgame (A : AdmissibleClass) :
+    ConstrainedCanonicalFormsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CanonicalFormsReductionsClassificationTheoremCanonicalLaneLean
+end HautevilleHouse
